@@ -3,7 +3,7 @@
 About
 -----
 * Source code of a computational design pipeline to generate a 3D Printed Object with capacitive touchpoints using single-wire sensing
-  - The pipeline is introduced in "Computational Design and Single-Wire Sensing of 3D Printed Objects with Integrated Capacitive Touchpoints", S. Sandra Bae, Takanori Fujiwara, Ellen Yi-Luen Do, Danielle Albers Szafir, and Michael L. Rivera. Proc. SCF, 2025 (forthcoming).
+  - The pipeline is introduced in "Computational Design and Single-Wire Sensing of 3D Printed Objects with Integrated Capacitive Touchpoints", S. Sandra Bae, Takanori Fujiwara, Ellen Yi-Luen Do, Danielle Albers Szafir, and Michael L. Rivera. In Proc. SCF, 2025 (forthcoming).
   - This pipeline is extended from the one in **["A Computational Design Pipeline to Fabricate Sensing Network Physicalizations"](https://arxiv.org/abs/2308.04714)**, S. Sandra Bae, Takanori Fujiwara, Anders Ynnerman, Ellen Yi-Luen Do, Michael L. Rivera, and Danielle Albers Szafir. IEEE Transactions on Visualization and Computer Graphics, vol. 30, no. 1, pp. 913-923, Jan. 2024. [Related source code.](https://github.com/takanori-fujiwara/sensing-network)
 
 * Links:
@@ -52,7 +52,7 @@ Content
 
 ******
 
-2. Python library for automatic single-wire sensing circuit design
+2. Python library for automatic single-wire sensing circuit design (`sw-sensing` library)
 -----
 
 ### Installation requirements
@@ -82,6 +82,41 @@ Content
 
     - For example, you can run: `cd examples` then `python3 land_single.py`. This code will generate three stl files, land.resistor.stl, land.link.stl, land.node.stl, in `model` directory. 
 
+
 ******
+
+3. Preparation for fabrication
+-----
+
+* To fabricate a freeform interface, you need to have four stl files made with the above `sw-sensing` libarary.
+
+  a. Original 3D model (interface exterior)
+  b. Conduits (cases of conductive traces. By default, named *.link.stl)
+  c. Conductive traces (traces for resistors. By default, named *.resistor.stl)
+  d. Touchpoints and wiring connection points (By default, named *.node.stl)
+
+* Print a 3D object with the above four stl files using conductive and non-conductive materials. For example, you can use PrusaSlicer for this preparation.
+
+  a. Original 3D model: non-conductive materials, infill density at least 5 % (e.g., 20%)
+  b. Conduits: non-conductive materials, high infill density (e.g., 100%)
+  c. Conductive traces: conductive materials, high infill density (e.g., 100%)
+  d. Touchpoints and wiring connection points: conductive materials, high infill density (e.g., 100%)
+
+* Build an electric circuit with Arduino Uno R4. Refer to `sensing-network` repository and use source code in their `arduino` directory: [https://github.com/takanori-fujiwara/sensing-network](https://github.com/takanori-fujiwara/sensing-network).
+
+* Perform calibration. Refer to `sensing-network` repository and use source coe in their `callibration` directory: [https://github.com/takanori-fujiwara/sensing-network](https://github.com/takanori-fujiwara/sensing-network).
+
+
+******
+License
+-----
+
+See License.txt (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License. Copyright: Takanori Fujiwara and S. Sandra Bae.)
+
+******
+How to cite
+-----
+
+S. Sandra Bae*, Takanori Fujiwara*, Danielle Szafir, Ellen Yi-Luen Do and Michael L. Rivera (*equally contributed), "Computational Design and Single-Wire Sensing of 3D Printed Objects with Integrated Capacitive Touchpoints." In Proc. SCF, 2025 (forthcoming).
 
 
