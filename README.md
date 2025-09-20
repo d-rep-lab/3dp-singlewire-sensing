@@ -15,12 +15,13 @@ About
 
 Content
 -----
-* interface_design: Web-based UI to select touchpoints and wiring connection points.
+* `interface_design`: Web-based UI to select touchpoints and wiring connection points.
+* `sw_sensing`: Python library for automatic circuit design of single-wire (or double-wire) sensing for freeform interfaces.
 
 
 ******
 
-Interface Design Web UI  
+1.Interface Design Web UI (`interface_design`)
 -----
 
 ### Installation requirements
@@ -50,3 +51,37 @@ Interface Design Web UI
     * Note: To avoid cross reference errors, for now, `interface_design` has its own `models` directory (i.e., this is different from `models` located at the top directory)
 
 ******
+
+2. Python library for automatic single-wire sensing circuit design
+-----
+
+### Installation requirements
+* Python3.12
+* Note: Currently, only supports Python3.12 due to the required library dependencies. 
+    - The main challenge to support Python3.13 is VTK's slight behavior difference after thair major update, which makes it difficult to debug the code.
+* Note: Tested with macOS Sequoia.
+
+### Setup
+
+* Install `graph-tool` for yoru Python3.12 environment. Follow `graph-tool`'s [install instruction](https://git.skewed.de/count0/graph-tool/-/wikis/installation-instructions).
+
+  * For macOS, a reasonable option is using anaconda's virtual environment. For example, after installing anaconda:
+
+    `conda create --name sws -c conda-forge graph-tool python=3.12`
+    
+    `conda activate sws`
+
+* While the above environment set up with graph-tool is active, run the below command after moving to this repository:
+
+    `pip3 install .`
+
+
+## Usage
+
+* See examples provided in `examples` directory. Detailed documentations will be provided in the near future.
+
+    - For example, you can run: `cd examples` then `python3 land_single.py`. This code will generate three stl files, land.resistor.stl, land.link.stl, land.node.stl, in `model` directory. 
+
+******
+
+
