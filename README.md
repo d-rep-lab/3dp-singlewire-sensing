@@ -7,9 +7,8 @@ About
   - This pipeline is extended from the one in **["A Computational Design Pipeline to Fabricate Sensing Network Physicalizations"](https://arxiv.org/abs/2308.04714)**, S. Sandra Bae, Takanori Fujiwara, Anders Ynnerman, Ellen Yi-Luen Do, Michael L. Rivera, and Danielle Albers Szafir. IEEE Transactions on Visualization and Computer Graphics, vol. 30, no. 1, pp. 913-923, Jan. 2024. [Related source code.](https://github.com/takanori-fujiwara/sensing-network)
 
 * Links:
-  * [Project page](#)
-  * [Demo video](#)
-  * [arXiv paper](#)
+  * [Demo video](https://youtu.be/at5puV1MHUo?si=asOLS72rP1dc6IvJ)
+  * [arXiv paper (coming soon)](#)
 
 ******
 
